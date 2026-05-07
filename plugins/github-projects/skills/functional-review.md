@@ -2,6 +2,7 @@
 name: functional-review
 description: Use when asked to do a functional review of a GitHub issue — fetches the issue, investigates the relevant area of the app, and posts a collegial challenge comment focused on end-user usability.
 argument-hint: issue number
+disable-model-invocation: true
 ---
 
 # Functional Review
