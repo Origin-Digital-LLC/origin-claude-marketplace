@@ -15,7 +15,7 @@ Challenge a GitHub issue from a product, business and usability angle: investiga
 ### Step 1: Fetch the issue
 
 ```bash
-gh issue view $ARGUMENTS --repo Nimble-Insurance/digital-quoting-platform
+gh issue view $ARGUMENTS
 ```
 
 Read the title and body carefully. Identify the area of the product being changed.
@@ -67,7 +67,7 @@ Then display the full comment body to the user in a markdown block and ask: **"R
 Do NOT post until the user explicitly says to. Once they approve (or give you edits to incorporate), post with:
 
 ```bash
-gh issue comment $ARGUMENTS --repo Nimble-Insurance/digital-quoting-platform --body "..."
+gh issue comment $ARGUMENTS --body "..."
 ```
 
 ---

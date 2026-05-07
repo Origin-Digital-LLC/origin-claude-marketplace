@@ -30,9 +30,11 @@ If this fails (no PR exists for the current branch), ask the user for the PR num
 Fetch inline review threads via GraphQL, filtering to only unresolved threads (the REST API does not expose resolution status):
 
 ```bash
-gh api graphql -f query='
-  query($pr: Int!) {
-    repository(owner: "Nimble-Insurance", name: "digital-quoting-platform") {
+OWNER=$(gh repo view --json owner -q .owner.login)
+REPO=$(gh repo view --json name -q .name)
+gh api graphql -F owner="$OWNER" -F repo="$REPO" -f query='
+  query($owner: String!, $repo: String!, $pr: Int!) {
+    repository(owner: $owner, name: $repo) {
       pullRequest(number: $pr) {
         reviewThreads(first: 100) {
           nodes {
@@ -58,7 +60,7 @@ gh api graphql -f query='
 Also fetch general PR conversation comments (these don't have resolution status):
 
 ```bash
-gh api repos/Nimble-Insurance/digital-quoting-platform/issues/$ARGUMENTS/comments \
+gh api repos/{owner}/{repo}/issues/$ARGUMENTS/comments \
   --jq '.[] | {id: .id, body: .body, user: .user.login}'
 ```
 
@@ -108,7 +110,7 @@ Don't batch all changes before replying. Reply as you go so reviewers know what'
 Reply directly on the inline comment thread — not as a top-level PR comment:
 
 ```bash
-gh api repos/Nimble-Insurance/digital-quoting-platform/pulls/$ARGUMENTS/comments/{comment_id}/replies \
+gh api repos/{owner}/{repo}/pulls/$ARGUMENTS/comments/{comment_id}/replies \
   -f body="Fixed — [brief description of what changed]"
 ```
 

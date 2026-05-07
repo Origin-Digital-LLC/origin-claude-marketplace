@@ -1,6 +1,6 @@
 ---
 name: download-github-issues
-description: Downloads the full GitHub Projects backlog for Nimble Insurance and writes it to project_mgmt/github-issues.json
+description: Downloads the full GitHub Projects backlog and writes it to project_mgmt/github-issues.json
 ---
 
 # Download GitHub Issues
@@ -15,13 +15,25 @@ Fetch the full GitHub Projects backlog and write it to `project_mgmt/github-issu
 mkdir -p project_mgmt
 ```
 
-### Step 2: Fetch the project board via GraphQL
+### Step 2: Detect org and project number
 
 ```bash
-gh api graphql -f query='
-query {
-  organization(login: "Nimble-Insurance") {
-    projectV2(number: 1) {
+ORG=$(gh repo view --json owner -q .owner.login)
+```
+
+If `$ARGUMENTS` was provided, use it as the project number. Otherwise ask the user: "What is your GitHub Projects project number?" (visible in the project URL: `github.com/orgs/ORG/projects/NUMBER`).
+
+```bash
+PROJECT_NUMBER=$ARGUMENTS  # or the number provided by the user
+```
+
+### Step 3: Fetch the project board via GraphQL
+
+```bash
+gh api graphql -F org="$ORG" -F projectNumber="$PROJECT_NUMBER" -f query='
+query($org: String!, $projectNumber: Int!) {
+  organization(login: $org) {
+    projectV2(number: $projectNumber) {
       title
       items(first: 100) {
         nodes {
@@ -55,7 +67,7 @@ query {
 ' > project_mgmt/github-issues.json
 ```
 
-### Step 3: Confirm the download
+### Step 4: Confirm the download
 
 ```bash
 python3 -c "import json; nodes = json.load(open('project_mgmt/github-issues.json'))['data']['organization']['projectV2']['items']['nodes']; print(f'Saved {len(nodes)} issues to project_mgmt/github-issues.json')"

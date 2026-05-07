@@ -1,6 +1,6 @@
 ---
 name: status-report
-description: Use when generating a project status report from GitHub project issues for Nimble Insurance
+description: Use when generating a project status report from GitHub project issues
 ---
 
 # Status Report
