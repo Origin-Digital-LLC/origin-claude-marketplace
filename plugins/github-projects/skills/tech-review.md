@@ -2,7 +2,6 @@
 name: tech-review
 description: Use when asked to do a technical/engineering review of a GitHub issue — fetches the issue, investigates relevant backend architecture, and posts a collegial challenge comment.
 argument-hint: issue number
-disable-model-invocation: true
 ---
 
 # Tech Review

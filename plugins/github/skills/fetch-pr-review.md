@@ -2,7 +2,6 @@
 name: fetch-pr-review
 description: Use when you have received review comments on your own PR and need to fetch, contextualize, and work through them systematically.
 argument-hint: PR number (optional — detected from current branch if omitted)
-disable-model-invocation: true
 ---
 
 # Fetch PR Review
