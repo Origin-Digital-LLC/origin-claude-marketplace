@@ -7,13 +7,13 @@
       "name": "github",
       "source": "./plugins/github",
       "description": "Skills for working with any GitHub repository. Requires gh CLI authenticated.",
-      "version": "0.4.0"
+      "version": "0.5.0"
     },
     {
       "name": "github-projects",
       "source": "./plugins/github-projects",
       "description": "Skills for repos using GitHub Projects for issue tracking. Requires gh CLI authenticated.",
-      "version": "0.4.0"
+      "version": "0.5.0"
     }
   ]
 }
