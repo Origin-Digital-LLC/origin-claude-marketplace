@@ -1,6 +1,7 @@
 ---
 name: download-github-issues
 description: Downloads the full GitHub Projects backlog and writes it to project_mgmt/github-issues.json
+disable-model-invocation: true
 ---
 
 # Download GitHub Issues

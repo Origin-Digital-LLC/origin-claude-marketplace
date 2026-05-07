@@ -1,6 +1,7 @@
 ---
 name: status-report
 description: Use when generating a project status report from GitHub project issues
+disable-model-invocation: true
 ---
 
 # Status Report
