@@ -13,7 +13,7 @@ Origin Digital's Claude Code plugin marketplace. Install individual plugins base
 
 ```bash
 # Register this marketplace
-/plugin marketplace add https://github.com/origindigital/origin-claude-marketplace
+/plugin marketplace add https://github.com/origin-digital-llc/origin-claude-marketplace
 
 # Install a plugin
 /plugin install github@origin-claude-marketplace
