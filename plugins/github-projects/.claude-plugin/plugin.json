@@ -1,0 +1,13 @@
+{
+  "name": "github-projects",
+  "version": "0.1.0",
+  "description": "Skills for repos using GitHub Projects for issue tracking. Requires gh CLI authenticated.",
+  "author": { "name": "Origin Digital" },
+  "components": {
+    "commands": false,
+    "agents": false,
+    "skills": true,
+    "hooks": false,
+    "mcp-servers": false
+  }
+}

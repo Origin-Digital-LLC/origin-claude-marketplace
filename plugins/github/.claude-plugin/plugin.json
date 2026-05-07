@@ -1,0 +1,13 @@
+{
+  "name": "github",
+  "version": "0.1.0",
+  "description": "Skills for working with any GitHub repository. Requires gh CLI authenticated.",
+  "author": { "name": "Origin Digital" },
+  "components": {
+    "commands": false,
+    "agents": false,
+    "skills": true,
+    "hooks": false,
+    "mcp-servers": false
+  }
+}

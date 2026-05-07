@@ -1,0 +1,19 @@
+{
+  "name": "origin-claude-marketplace",
+  "description": "Origin Digital's Claude Code plugin marketplace",
+  "owner": { "name": "Origin Digital", "email": "bbarnett@origindigital.com" },
+  "plugins": [
+    {
+      "name": "github",
+      "source": "./plugins/github",
+      "description": "Skills for working with any GitHub repository. Requires gh CLI authenticated.",
+      "version": "0.1.0"
+    },
+    {
+      "name": "github-projects",
+      "source": "./plugins/github-projects",
+      "description": "Skills for repos using GitHub Projects for issue tracking. Requires gh CLI authenticated.",
+      "version": "0.1.0"
+    }
+  ]
+}
