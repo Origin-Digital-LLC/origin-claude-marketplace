@@ -4,13 +4,21 @@ Skills for repos using [GitHub Projects](https://docs.github.com/en/issues/plann
 
 ## Skills
 
-### functional-review
+### download-github-issues
 
-Fetches GitHub Project issues so Claude can review the codebase against them and ask clarifying questions.
+Downloads the full GitHub Projects backlog and writes it to `project_mgmt/github-issues.json`. Can be invoked standalone or is called automatically by `status-report`.
 
 ### status-report
 
-Downloads the full GitHub Projects backlog and writes a status report on it.
+Reads `project_mgmt/github-issues.json` and writes a dated markdown status report grouped by board column.
+
+### functional-review
+
+Fetches a GitHub issue and posts a collegial challenge comment focused on product, business, and usability angles.
+
+### tech-review
+
+Fetches a GitHub issue and posts a collegial challenge comment focused on architecture and engineering concerns.
 
 ## Requirements
 
