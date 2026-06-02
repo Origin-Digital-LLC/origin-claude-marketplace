@@ -1,0 +1,13 @@
+{
+  "name": "workflow",
+  "version": "0.5.0",
+  "description": "Human-AI augmented development lifecycle: specialist agents and a chained skill pipeline (brainstorm → build/feature → implement → fix) that drives features to completion, with the human involved only at kick-off and review.",
+  "author": { "name": "Origin Digital" },
+  "components": {
+    "commands": false,
+    "agents": true,
+    "skills": true,
+    "hooks": false,
+    "mcp-servers": false
+  }
+}
